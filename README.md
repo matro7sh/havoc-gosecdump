@@ -2,6 +2,9 @@
 
 >This module will upload the gosecdump binary to a temporary folder under windows  (it's better to use AppData or ProgramData)
 
+
+> This plugin embeds a compiled version of go-secdump, if ever the binary gets caught after upload, modify the code a little, recompile and it will pass
+
 # Usage
 
 Go to `Script > Script Manager ` and load the .py file
