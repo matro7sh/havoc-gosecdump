@@ -4,6 +4,10 @@
 
 # Usage
 
+Go to `Script > Script Manager ` and load the .py file
+
+> !! edit the path into.py file 4 before !! 
+
 `gosecdump <target_ip> <user> <password> <sam/lsa/dcc2>`
 
 
