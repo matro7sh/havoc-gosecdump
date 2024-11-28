@@ -2,16 +2,14 @@
 
 >This module will upload the gosecdump binary to a temporary folder under windows  (it's better to use AppData or ProgramData)
 
-
-> This plugin embeds a compiled version of go-secdump, if ever the binary gets caught after upload, modify the code a little, recompile and it will pass
-
 # Usage
 
-Go to `Script > Script Manager ` and load the .py file
+Go to `Attack > Extensions ` and select havoc-gosecdump + install
 
-> !! edit the path into.py file 4 before !! 
+you now have a new gosecdump command available
 
-`gosecdump <target_ip> <user> <password> <sam/lsa/dcc2>`
+
+to use it, here are the parameters to pass: `gosecdump <target_ip> <user> <password> <sam/lsa/dcc2>`
 
 
 ![demo](img/poc.png)
