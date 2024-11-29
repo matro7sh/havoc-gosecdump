@@ -12,7 +12,12 @@ you now have a new gosecdump command available
 to use it, here are the parameters to pass: `gosecdump <target_ip> <user> <password> <sam/lsa/dcc2>`
 
 
-![demo](img/poc.png)
+![demo nt](img/poc.png)
+
+
+![demo lsa](img/lsa.png)
+
+![demo dcc2](img/poc.png)
 
 
 It can be used in 127.0.0.1 but it is more intended to dumper the SAM/LSA/DCC2 on a remote machine that our compromised machine can reach.
